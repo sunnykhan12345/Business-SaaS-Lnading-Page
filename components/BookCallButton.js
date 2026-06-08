@@ -11,7 +11,7 @@ const variants = {
   soft: "bg-black/5 text-ink hover:bg-black/10 dark:bg-white/[0.08] dark:text-white dark:hover:bg-white/[0.12]",
 };
 
-export default function Button({
+export default function BookCallButton({
   children,
   href = "#",
   variant = "primary",

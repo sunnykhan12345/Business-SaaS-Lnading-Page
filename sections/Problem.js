@@ -26,7 +26,7 @@ export default function Problem() {
                 {t.problem.subtitle}
               </p>
               <div className="mt-8 grid gap-3">
-                {t.problem.pains.map((pain, index) => (
+                {t.problem.pains?.map((pain, index) => (
                   <div
                     key={pain}
                     className="flex gap-3 rounded-[12px] border border-black/10 bg-white/70 p-4 text-sm font-medium text-ink shadow-sm dark:border-white/15 dark:bg-white/5 dark:text-white"
@@ -41,9 +41,9 @@ export default function Problem() {
                       <path
                         d="M19.0005 5L5.00049 19M5.00049 5L19.0005 19"
                         stroke="#E7000B"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
 

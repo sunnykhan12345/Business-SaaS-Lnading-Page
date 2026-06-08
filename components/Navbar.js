@@ -6,6 +6,7 @@ import Button from "@/components/Button";
 import Container from "@/components/Container";
 import { useApp } from "@/lib/AppProvider";
 import { languages } from "@/lib/translations";
+import Link from "next/link";
 
 export default function Navbar() {
   const { t, locale, setLocale, theme, setTheme } = useApp();
@@ -18,12 +19,12 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 pt-4 sm:pt-6">
       <Container>
         <nav className="flex items-center justify-between rounded-[60px] bg-white/80 px-4 py-3 shadow-card backdrop-blur-xl dark:border-white/10 dark:bg-ink/75">
-          <a
+          <Link
             href="#home"
             className="px-3 text-2xl xl:text-[44px] font-light tracking-wide gradient-text sm:px-5"
           >
             {t.nav.logo}
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-1 lg:flex">
             {t.nav.links.map((link) => (

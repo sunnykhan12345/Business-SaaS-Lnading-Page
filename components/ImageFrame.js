@@ -1,11 +1,18 @@
-import Image from 'next/image';
-import { getImageSize } from '@/lib/imageSizes';
+import Image from "next/image";
+import { getImageSize } from "@/lib/imageSizes";
 
-export default function ImageFrame({ src, alt, priority = false, className = '', imageClassName = '', sizes = '(max-width: 768px) 92vw, 50vw' }) {
+export default function ImageFrame({
+  src,
+  alt,
+  priority = false,
+  className = "",
+  imageClassName = "",
+  sizes = "(max-width: 768px) 92vw, 50vw",
+}) {
   const { width, height } = getImageSize(src);
 
   return (
-    <div className={`relative overflow-hidden border-black/10 bg-white/50  shadow-card dark:border-white/10 dark:bg-white/5 ${className}`}>
+    <div className={`relative overflow-hidden ${className}`}>
       <Image
         src={src}
         alt={alt}
