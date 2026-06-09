@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* Nexa Pro Trial Font */
 @font-face {
   font-family: "Nexa Pro_Trial";
@@ -20,7 +19,6 @@
   font-style: italic;
   font-display: swap;
 }
-
 :root {
   color-scheme: light;
   --site-gradient: linear-gradient(
@@ -112,7 +110,8 @@ body::selection {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.08);
+    /* background: rgba(255, 255, 255, 0.08); */
+    background: transparent;
   }
 
   .gradient-border::before {
@@ -129,7 +128,7 @@ body::selection {
     inset: 1px;
     z-index: -1;
     border-radius: inherit;
-    background: #080810;
+    background: transparent;
   }
 
   .dark .gradient-border::after {
@@ -218,7 +217,6 @@ body::selection {
     #0b0b10;
   box-shadow: none;
 }
-
 .solution-card::before {
   content: "";
   position: absolute;

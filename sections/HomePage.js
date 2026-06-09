@@ -1,5 +1,4 @@
 "use client";
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
@@ -10,7 +9,6 @@ import Contact from "@/sections/Contact";
 import HowItWorksCta from "./HowItWorksCta";
 import SolutionSection from "./SolutionSection";
 import BusinessManagementSection from "./BusinessManagementSection";
-
 export default function HomePage() {
   return (
     <>
