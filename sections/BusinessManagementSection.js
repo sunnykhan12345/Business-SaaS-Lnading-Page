@@ -3,6 +3,8 @@
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import { useApp } from "@/lib/AppProvider";
+import { QualifiedIcon, UserIcon } from "@/public/icons/icon";
+import Image from "next/image";
 export default function BusinessManagementSection() {
   const { t } = useApp();
   const cards = t.businessManagement.cards;
@@ -31,12 +33,14 @@ export default function BusinessManagementSection() {
                     <LeadColumn
                       title={cards.lead.newLeads}
                       color="green"
+                      icon={<UserIcon />}
                       items={["Omar Y.", "Elias V.", "Fatima A.", "Karim D."]}
                     />
 
                     <LeadColumn
                       title={cards.lead.qualified}
                       color="purple"
+                      icon={<QualifiedIcon/>}
                       items={["Sofia M.", "Layla Q.", "Aisha M.", "Nadia R."]}
                     />
                     <LeadColumn
@@ -122,7 +126,7 @@ export default function BusinessManagementSection() {
     </section>
   );
 }
-function LeadColumn({ title, items, color }) {
+function LeadColumn({ title, items, color, icon }) {
   const colorClass =
     color === "green"
       ? "bg-[#19C37D]"
@@ -134,12 +138,16 @@ function LeadColumn({ title, items, color }) {
     <div className="w-[132px] shrink-0">
       <div className="mb-2 flex items-center gap-2 rounded-t-[10px] bg-white/[0.08] px-3 py-2">
         <span
-          className={`grid h-6 w-6 place-items-center rounded-full ${colorClass}`}
+          className={`grid h-9 w-9 flex-shrink-0  place-items-center rounded-full ${colorClass}`}
         >
-          <span className="h-2 w-2 rounded-full bg-white" />
+          {icon}
         </span>
-        <span className="text-[11px] font-semibold text-white">{title}</span>
+
+        <span className="text-sm font-semibold text-white whitespace-nowrap">
+          {title}
+        </span>
       </div>
+
       <div className="grid gap-2">
         {items.map((item) => (
           <div
@@ -159,11 +167,22 @@ function LeadColumn({ title, items, color }) {
   );
 }
 function PackagePlan({ name }) {
+  const cleanName = name?.trim();
+
+  const planColors = {
+    "Basic Plan": "#FFFFFF",
+    "Standard Plan": "#4DE27E",
+    "All in One Plan": "#4E8FFF",
+    "Premium Plan": "#7B46FF",
+  };
+
   return (
     <div className="package-plan-item">
       <div className="package-plan-left-line" />
       <div className="package-plan-button">
-        <span>{name}</span>
+        <span style={{ color: planColors[cleanName] || "#FFFFFF" }}>
+          {name}
+        </span>
       </div>
     </div>
   );

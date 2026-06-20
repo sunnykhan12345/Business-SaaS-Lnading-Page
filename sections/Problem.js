@@ -1,32 +1,26 @@
 "use client";
-
 import Container from "@/components/Container";
 import ImageFrame from "@/components/ImageFrame";
 import Reveal from "@/components/Reveal";
 import SectionBadge from "@/components/SectionBadge";
 import { useApp } from "@/lib/AppProvider";
-
 export default function Problem() {
   const { t } = useApp();
-
   return (
     <section id="features" className="overflow-hidden py-14 sm:py-24">
       <Container>
         <div className="mb-8 text-center">
           <SectionBadge>{t.problem.badge}</SectionBadge>
-
           <h2 className="mx-auto mt-6 max-w-4xl text-balance text-[32px] font-light leading-tight tracking-[-0.03em] text-ink dark:text-white sm:text-5xl">
             {t.problem.title}
           </h2>
         </div>
-
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
             <div className="min-w-0">
               <p className="mx-auto max-w-2xl text-center text-base leading-7 text-black/60 dark:text-white/60 lg:mx-0 lg:text-left">
                 {t.problem.subtitle}
               </p>
-
               <div className="mt-8 grid gap-3">
                 {t.problem.pains?.map((pain) => (
                   <div
@@ -47,7 +41,6 @@ export default function Problem() {
                         strokeLinejoin="round"
                       />
                     </svg>
-
                     <span className="min-w-0 flex-1 text-sm leading-6 sm:text-base">
                       {pain}
                     </span>
@@ -56,7 +49,6 @@ export default function Problem() {
               </div>
             </div>
           </Reveal>
-
           <Reveal delay={0.1}>
             <ImageFrame
               src="/images/problem-workflow.webp"

@@ -343,13 +343,11 @@ body::selection {
 }
 
 .package-plan-button span {
-  color: #ffffff;
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.02em;
 }
-
 @keyframes package-single-loop {
   0%,
   20% {
